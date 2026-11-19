@@ -28,7 +28,7 @@ window.MathJax={tex:{inlineMath:[["\\(","\\)"]],displayMath:[["\\[","\\]"]]},svg
 :root{
   --bg:#f4efe4; --surface:#fffcf5; --ink:#18170f; --muted:#5d584c; --line:#e3dccb;
   --accent:#1e5a45; --accent-2:#15402f; --dark:#14130e; --dark-2:#1f1d16; --dark-line:#34312a; --dark-muted:#b3ab98;
-  --che:#0f766e; --com:#c2410c; --ict:#1d4ed8; --mat:#b4235a; --phy:#b07a00; --mgt:#3f6212; --psy:#8a4b2a; --gen:#475569;
+  --che:#0f766e; --com:#c2410c; --ict:#1d4ed8; --mat:#b4235a; --phy:#b07a00; --mgt:#3f6212; --psy:#8a4b2a; --pol:#3f5b8c; --gen:#475569;
   --r:16px; --r-s:10px; --wrap:1240px; --pad:clamp(20px,4vw,56px); --nav:68px;
   --head:"Bricolage Grotesque",system-ui,sans-serif; --sans:"Inter",system-ui,-apple-system,"Segoe UI",sans-serif;
   --ease:cubic-bezier(.2,.7,.2,1);
@@ -130,7 +130,7 @@ h1 span{color:var(--accent)}
 /* one screen at a time */
 body[data-view="home"] #courses,body:not([data-view="home"]) .hero,body:not([data-view="home"]) #grid{display:none}
 #courses>section{display:none}
-body[data-view="che"] #che,body[data-view="com"] #com,body[data-view="ict"] #ict,body[data-view="mat"] #mat,body[data-view="phy"] #phy,body[data-view="psy"] #psy,body[data-view="more"] #more{display:flex}
+body[data-view="che"] #che,body[data-view="com"] #com,body[data-view="ict"] #ict,body[data-view="mat"] #mat,body[data-view="phy"] #phy,body[data-view="psy"] #psy,body[data-view="pol"] #pol,body[data-view="more"] #more{display:flex}
 .crumbs{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin-bottom:clamp(20px,3vw,36px)}
 .crumbs .sp{flex:1}
 .crumbs .back{background:var(--surface)}
@@ -572,7 +572,7 @@ mjx-container{max-width:100%;overflow-x:auto;overflow-y:hidden}
 .pr-stats span{display:block;margin-top:4px;font-size:13px;color:var(--muted)}
 .pr-go{display:flex;flex-wrap:wrap;gap:10px;margin:0 0 22px}
 .pr-mocks{flex-basis:100%;display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin-top:6px;padding-top:14px;border-top:1px dashed var(--line)}.pr-mocks>span{margin-right:8px;font-weight:650;line-height:1.3}.pr-mocks>span small{display:block;font-weight:400;font-size:12.5px;color:var(--muted)}
-#study :not(.tbl)>table{display:block;max-width:100%;overflow-x:auto}#study .prose{overflow-wrap:anywhere}
+#study :not(.tbl)>table{display:block;max-width:100%;overflow-x:auto}#study .prose{overflow-wrap:break-word}
 .pr-go .btn{min-height:46px;padding:0 18px;font-size:14.5px}
 .pr-go .btn:disabled{opacity:.45;cursor:default;transform:none}
 .pr-go .btn small{font-weight:500;opacity:.8}
@@ -961,7 +961,7 @@ footer .lp-legal span{max-width:52em;line-height:1.5}
   <div class="wrap">
     <div class="grid-head"><div><p class="eyebrow">Courses</p><h2 id="h-grid">University of Botswana, first year</h2></div><ul class="mini-stats" id="stats"></ul></div>
     <div class="lp-unis" role="list" aria-label="Universities">
-      <span class="lp-uni on" role="listitem"><b>UB</b> University of Botswana<em>7 courses</em></span>
+      <span class="lp-uni on" role="listitem"><b>UB</b> University of Botswana<em>8 courses</em></span>
       <button class="lp-uni" type="button" role="listitem" data-request="BIUST"><b>BIUST</b> Botswana International University of Science and Technology<em>Request</em></button>
       <button class="lp-uni" type="button" role="listitem" data-request="BUAN"><b>BUAN</b> Botswana University of Agriculture and Natural Resources<em>Request</em></button>
       <button class="lp-uni" type="button" role="listitem" data-request="BAC"><b>BAC</b> Botswana Accountancy College<em>Request</em></button>
@@ -1009,7 +1009,7 @@ footer .lp-legal span{max-width:52em;line-height:1.5}
 <section class="lp lp-faqs" id="faq" aria-labelledby="h-faq">
   <div class="wrap lp-faq-wrap">
     <div><p class="eyebrow">Questions</p><h2 id="h-faq">Before you start</h2><p class="lp-faq-side">Can't see your course? <a href="#" data-request="">Request it</a> and the most requested courses are added first.</p></div>
-    <div class="lp-faq-list"><details class="lp-faq"><summary>Is Study Desk free?<span aria-hidden="true"></span></summary><p>Yes. You enter your name and email once to open it, and everything inside is free. Early users may get a discount if paid features are added later.</p></details><details class="lp-faq"><summary>Which universities and courses are covered?<span aria-hidden="true"></span></summary><p>Seven University of Botswana first-year courses today: CHE 101, COM 141, ICT141, MAT111, PHY112, PSY 101 and MGT 100. BIUST, BUAN, BAC and Botho University are next. Request your course and it moves up the list.</p></details><details class="lp-faq"><summary>Where do the notes and questions come from?<span aria-hidden="true"></span></summary><p>Notes are written from lecture slides and course material. Questions come from past tests and exam papers, sorted by topic, plus new questions written so that every topic is covered. Every calculation is worked out and checked.</p></details><details class="lp-faq"><summary>Is this an official university website?<span aria-hidden="true"></span></summary><p>No. Study Desk is an independent study resource. It is not affiliated with or endorsed by the University of Botswana or any other university. Always check your own course outline for what will be examined.</p></details><details class="lp-faq"><summary>What happens to my details?<span aria-hidden="true"></span></summary><p>Your name and email are sent to Study Desk's sign-up form with the time of each visit. Your scores, ticks and mock results stay in your own browser and are not sent anywhere.</p></details><details class="lp-faq"><summary>I found a mistake. How do I report it?<span aria-hidden="true"></span></summary><p>Use Leave a review at the bottom of any page and say which course, topic and question. Corrections go live for everyone.</p></details></div>
+    <div class="lp-faq-list"><details class="lp-faq"><summary>Is Study Desk free?<span aria-hidden="true"></span></summary><p>Yes. You enter your name and email once to open it, and everything inside is free. Early users may get a discount if paid features are added later.</p></details><details class="lp-faq"><summary>Which universities and courses are covered?<span aria-hidden="true"></span></summary><p>Eight University of Botswana first-year courses today: CHE 101, COM 141, ICT141, MAT111, PHY112, PSY 101, POL 101 and MGT 100. BIUST, BUAN, BAC and Botho University are next. Request your course and it moves up the list.</p></details><details class="lp-faq"><summary>Where do the notes and questions come from?<span aria-hidden="true"></span></summary><p>Notes are written from lecture slides and course material. Questions come from past tests and exam papers, sorted by topic, plus new questions written so that every topic is covered. Every calculation is worked out and checked.</p></details><details class="lp-faq"><summary>Is this an official university website?<span aria-hidden="true"></span></summary><p>No. Study Desk is an independent study resource. It is not affiliated with or endorsed by the University of Botswana or any other university. Always check your own course outline for what will be examined.</p></details><details class="lp-faq"><summary>What happens to my details?<span aria-hidden="true"></span></summary><p>Your name and email are sent to Study Desk's sign-up form with the time of each visit. Your scores, ticks and mock results stay in your own browser and are not sent anywhere.</p></details><details class="lp-faq"><summary>I found a mistake. How do I report it?<span aria-hidden="true"></span></summary><p>Use Leave a review at the bottom of any page and say which course, topic and question. Corrections go live for everyone.</p></details></div>
   </div>
 </section>
 
@@ -1045,7 +1045,7 @@ footer .lp-legal span{max-width:52em;line-height:1.5}
       <span class="mark"><svg width="28" height="28" viewBox="0 0 30 30" aria-hidden="true"><rect width="30" height="30" rx="9" fill="#f4efe4"/><path d="M8 10.5h14M8 15h14M8 19.5h8" stroke="#14130e" stroke-width="2.4" stroke-linecap="round"/></svg>Study Desk</span>
       <p>Study notes, past papers and worked practice for Botswana university students.</p>
     </div>
-    <nav class="lp-foot-col" aria-label="Courses"><b>UB courses</b><a href="#che">CHE 101 Chemistry</a><a href="#com">COM 141 Communication</a><a href="#ict">ICT141 Computing</a><a href="#mat">MAT111 Mathematics</a><a href="#phy">PHY112 Physics</a><a href="#psy">PSY 101 Psychology</a><a href="#more">MGT 100 Management</a></nav>
+    <nav class="lp-foot-col" aria-label="Courses"><b>UB courses</b><a href="#che">CHE 101 Chemistry</a><a href="#com">COM 141 Communication</a><a href="#ict">ICT141 Computing</a><a href="#mat">MAT111 Mathematics</a><a href="#phy">PHY112 Physics</a><a href="#psy">PSY 101 Psychology</a><a href="#pol">POL 101 Political Science</a><a href="#more">MGT 100 Management</a></nav>
     <nav class="lp-foot-col" aria-label="Study Desk"><b>Study Desk</b><a href="#how">How it works</a><a href="#why">Why Study Desk</a><a href="#faq">Questions</a><a href="#" data-request="">Request a course</a><a href="#" data-review>Leave a review</a></nav>
   </div>
   <div class="wrap lp-legal">
@@ -1057,7 +1057,7 @@ footer .lp-legal span{max-width:52em;line-height:1.5}
 <script>
 const A = id => "https://claude.ai/artifact/" + id;
 /* question and notes counts, written by the build */
-const COUNTS = {"che":{"sections":33,"questions":455},"psy":{"sections":29,"questions":327},"com":{"sections":30,"questions":82},"ict":{"sections":11,"questions":880},"mat":{"sections":16,"questions":116},"phy":{"sections":12,"questions":66},"mgt":{"questions":200}};
+const COUNTS = {"che":{"sections":33,"questions":455},"psy":{"sections":29,"questions":327},"pol":{"sections":7,"questions":162},"com":{"sections":30,"questions":82},"ict":{"sections":11,"questions":880},"mat":{"sections":16,"questions":116},"phy":{"sections":12,"questions":66},"mgt":{"questions":200}};
 const ACT=(id,k)=>{const n=COUNTS[id]||{};if(!n.sections&&!n.questions)return "";return `<div class="study-actions">${n.sections?`<a class="btn btn-1" ${SOURCES[id]?`href="#${id}" data-to="nt-${id}"`:`href="#${id}-notes"`}>Notes · ${n.sections} topics</a>`:""}${n.questions?`<a class="btn ${n.sections?"btn-2":"btn-1"}" ${SOURCES[id]?`href="#${id}" data-to="pr-${id}"`:`href="#${id}-practice"`}>Practice · ${n.questions.toLocaleString()} questions</a>`:""}</div>`};
 const COURSES = [
   {id:"che", code:"CHE 101", name:"General Chemistry I", note:"All 28 topics: your bonding notes, draft notes for topics 1–23, the revision video and the hydrate practical."},
@@ -1066,6 +1066,7 @@ const COURSES = [
   {id:"mat", code:"MAT111", name:"Introductory Mathematics I", note:"Functions, exponentials, logarithms and rational functions."},
   {id:"phy", code:"PHY112", name:"Physics", note:"Mechanics, energy, optics and lab experiments.", dark:true},
   {id:"psy", code:"PSY 101", name:"Introduction to Psychology", note:"Seven chapters from your slides: methods, the brain, learning, thinking, development and personality, with exam-style multiple choice and essay practice."},
+  {id:"pol", code:"POL 101", name:"Introduction to Political Science", note:"Politics, power and authority, political culture, human rights, parties, elections and the military, with 162 multiple-choice questions."},
   {id:"mgt", code:"MGT 100", name:"Management", note:"Principles of management across the whole course.", more:true},
   {id:"gen", code:"Other", name:"Plan and extras", note:"Your study plan and anything outside the seven courses.", more:true}
 ];
@@ -1138,7 +1139,7 @@ const PRACTICE = {};  /* loaded per course: [{num,title,qs:[...]}] */
 const PR_ERR = {};
 const MIN_ANS = 5;    /* answers a topic needs before its score is shown */
 /* where each course's questions come from; written questions without a topic are matched by what they ask */
-const SOURCES = {psy:{file:"data/psy.json",topicOf:{},draftSets:[]},che:{file:"data/che.json",topicOf:{T1:25,T2:26,T3:25,T4:24,T5:27,T6:27,T7:28,T8:28},draftSets:["syl","calc"]}};
+const SOURCES = {pol:{file:"data/pol.json",topicOf:{},draftSets:[]},psy:{file:"data/psy.json",topicOf:{},draftSets:[]},che:{file:"data/che.json",topicOf:{T1:25,T2:26,T3:25,T4:24,T5:27,T6:27,T7:28,T8:28},draftSets:["syl","calc"]}};
 const PKEY = "studydesk-practice-v1";
 let PA = {}; try{PA=JSON.parse(localStorage.getItem(PKEY)||"{}")||{}}catch(e){PA={}}
 const savePA = ()=>{try{localStorage.setItem(PKEY,JSON.stringify(PA))}catch(e){}};
@@ -1434,8 +1435,8 @@ document.addEventListener("click",e=>{
 });
 addEventListener("hashchange",()=>Object.keys(NOTES).forEach(refreshNotes));
 
-const ORDER=["che","com","ict","mat","phy","psy","more"];
-const LABEL=v=>v==="more"?"MGT 100 & extras":course(v).code;
+const ORDER=["che","com","ict","mat","phy","psy","pol","more"];
+const LABEL=v=>v==="more"?"MGT 100":course(v).code;
 function crumbs(v){
   const i=ORDER.indexOf(v),p=ORDER[(i+ORDER.length-1)%ORDER.length],n=ORDER[(i+1)%ORDER.length];
   const cv=x=>x==="more"?"mgt":x;
@@ -1519,8 +1520,8 @@ const navLinks=$$("#courseNav a");
 /* one screen at a time: home (search + course tiles) or a single course */
 function view(){
   const h=decodeURIComponent(location.hash.slice(1));
-  if(/^(phy|mat|che|com|ict|mgt|psy)-(notes|practice)$/.test(h))return; // study view handles itself
-  const v=["che","com","ict","mat","phy","psy"].includes(h)?h:["mgt","gen","more"].includes(h)?"more":"home";
+  if(/^(phy|mat|che|com|ict|mgt|psy|pol)-(notes|practice)$/.test(h))return; // study view handles itself
+  const v=["che","com","ict","mat","phy","psy","pol"].includes(h)?h:["mgt","gen","more"].includes(h)?"more":"home";
   const changed=document.body.dataset.view!==v;
   document.body.dataset.view=v;
   navLinks.forEach(a=>{const t=a.getAttribute("href").slice(1);const on=t===v||(v==="more"&&t==="mgt");a.classList.toggle("on",on);on?a.setAttribute("aria-current","page"):a.removeAttribute("aria-current")});
@@ -1566,7 +1567,7 @@ renderProgress();
 /* ---------- Study view: notes reader + question practice ---------- */
 (function(){
 const META={phy:{code:"PHY112",name:"Physics"},mat:{code:"MAT111",name:"Introductory Mathematics I"},che:{code:"CHE 101",name:"General Chemistry I"},
-  com:{code:"COM 141",name:"Communication"},ict:{code:"ICT141",name:"Computing Skills"},mgt:{code:"MGT 100",name:"Management"},psy:{code:"PSY 101",name:"Introduction to Psychology"}};
+  com:{code:"COM 141",name:"Communication"},ict:{code:"ICT141",name:"Computing Skills"},mgt:{code:"MGT 100",name:"Management"},psy:{code:"PSY 101",name:"Introduction to Psychology"},pol:{code:"POL 101",name:"Introduction to Political Science"}};
 const SK="studydesk-study-v1";
 let S={read:{},ans:{},best:{},size:"m",bgPaused:true};
 try{const v=JSON.parse(localStorage.getItem(SK)||"null");if(v&&typeof v==="object")S=Object.assign(S,v)}catch(e){}
@@ -1647,7 +1648,7 @@ const HY=(()=>{
 
 /* ---------- routing ---------- */
 function route(){
-  const m=location.hash.slice(1).match(/^(phy|mat|che|com|ict|mgt|psy)-(notes|practice)$/);
+  const m=location.hash.slice(1).match(/^(phy|mat|che|com|ict|mgt|psy|pol)-(notes|practice)$/);
   if(m&&(m[2]==="notes"||!SOURCES[m[1]]))openStudy(m[1],m[2]);else closeStudy();
 }
 function closeStudy(){
